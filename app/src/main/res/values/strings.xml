@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Medisys</string>
+
+    <!-- Login strings -->
+    <string name="username_placeholder">Usuario</string>
+    <string name="password_placeholder">Contraseña</string>
+    <string name="login_button_text">Ingresar</string>
+
+    <!-- Navigation menu options -->
+    <string name="patients_menu_title">Pacientes</string>
+
+
+    <string name="title_activity_main_landing">MainLandingActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

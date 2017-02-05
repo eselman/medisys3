@@ -1,4 +1,4 @@
-package medisys.eselman.com.medisys;
+package com.eselman.medisys;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

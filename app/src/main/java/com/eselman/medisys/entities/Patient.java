@@ -1,8 +1,11 @@
 package com.eselman.medisys.entities;
 
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Years;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
@@ -11,6 +14,8 @@ import java.util.Set;
  */
 
 public class Patient implements Serializable {
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
     private Long id;
     private String firstName;
     private String lastName;
@@ -107,7 +112,18 @@ public class Patient implements Serializable {
         this.insurances = insurances;
     }
 
-    public String getCompleteAddress(){
+    public String getBirthDateStr(){
+        return simpleDateFormat.format(getBirthDate().toDate());
+    }
+
+    public String getPatientAge(){
+        LocalDate birthdate = getBirthDate().toLocalDate();
+        LocalDate now = new LocalDate();
+        Years age = Years.yearsBetween(birthdate, now);
+        return Integer.valueOf(age.getYears()).toString();
+    }
+
+    public String getFullAddress(){
         StringBuilder addressBuilder = new StringBuilder("");
 
         if (this.getAddress() != null) {

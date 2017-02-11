@@ -71,6 +71,9 @@ public class PatientsLandingFragment extends Fragment implements PatientsClientT
           @Override
           public void onClick(View v) {
             Intent patientDetailsIntent = new Intent(getActivity(), PatientDetailsActivity.class);
+              Bundle patientBundle = new Bundle();
+              patientBundle.putSerializable(Constants.PATIENT_BUNDLE, new Patient());
+              patientDetailsIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
             startActivity(patientDetailsIntent);
           }
         });

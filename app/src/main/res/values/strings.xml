@@ -9,6 +9,22 @@
     <!-- Navigation menu options -->
     <string name="patients_menu_title">Pacientes</string>
 
+    <!-- Action Bar Title -->
+    <string name="add_patient_title">Nuevo Paciente</string>
+
+    <!-- Patient Tabs Label -->
+    <string name="patient_form_label">Datos Personales</string>
+    <string name="patient_insurances_label">Obra Social</string>
+    <string name="patient_history_label">Historia Clinica</string>
+
+    <!-- Patient Form Label -->
+    <string name="patient_idtype_label">Tipo y Nro de Doc:</string>
+    <string name="patient_birth_date_label">Fecha de Nacimiento:</string>
+    <string name="patient_age_label">Edad:</string>
+    <string name="patient_phone_label">Telefono:</string>
+    <string name="patient_mobile_phone_label">Celular:</string>
+    <string name="patient_address_label">Domicilio:</string>
+
 
     <string name="title_activity_main_landing">MainLandingActivity</string>
 

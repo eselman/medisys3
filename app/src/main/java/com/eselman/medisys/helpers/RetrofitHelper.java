@@ -3,6 +3,11 @@ package com.eselman.medisys.helpers;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.joda.time.LocalDateTime;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,9 +31,12 @@ public class RetrofitHelper {
     public RetrofitHelper(Context context) {
         this.context = context;
         this.httpClient = new OkHttpClient.Builder();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeConverter())
+                .create();
         builder = new Retrofit.Builder()
                 .baseUrl(SERVER_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create());
+                .addConverterFactory(GsonConverterFactory.create(gson));
     }
 
     public <S> S createProvider(Class<S> serviceClass, boolean requireAuth) {

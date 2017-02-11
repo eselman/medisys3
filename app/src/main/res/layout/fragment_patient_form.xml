@@ -1,0 +1,163 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+    <RelativeLayout
+        android:id="@+id/patientPersonalInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/patientIdTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_idtype_label"/>
+
+        <TextView
+            android:id="@+id/patientIdType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/patientIdTypeLabel"
+            android:layout_toRightOf="@id/patientIdTypeLabel"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            tools:text="DNI"/>
+
+        <TextView
+            android:id="@+id/patientIdNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/patientIdType"
+            android:layout_toRightOf="@id/patientIdType"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            tools:text="29561830"/>
+
+        <TextView
+            android:id="@+id/patientBirthDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patientIdType"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_birth_date_label"/>
+
+        <TextView
+            android:id="@+id/patientBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientBirthDateLabel"
+            android:layout_toEndOf="@id/patientBirthDateLabel"
+            android:layout_below="@id/patientIdNumber"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            tools:text="23/12/1982"/>
+
+        <TextView
+            android:id="@+id/patientAgeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientBirthDate"
+            android:layout_toEndOf="@id/patientBirthDate"
+            android:layout_marginLeft="@dimen/spacing_double"
+            android:layout_marginStart="@dimen/spacing_double"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_below="@id/patientIdNumber"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_age_label" />
+
+        <TextView
+            android:id="@+id/patientAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientAgeLabel"
+            android:layout_toEndOf="@id/patientAgeLabel"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_below="@id/patientIdNumber"
+            tools:text="34"/>
+
+        <TextView
+            android:id="@+id/patientPhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patientBirthDateLabel"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_phone_label"/>
+
+        <TextView
+            android:id="@+id/patientPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientPhoneLabel"
+            android:layout_toEndOf="@id/patientPhoneLabel"
+            android:layout_below="@id/patientBirthDateLabel"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            tools:text="4428420"/>
+
+        <TextView
+            android:id="@+id/patientMobilePhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientPhoneNumber"
+            android:layout_toEndOf="@id/patientPhoneNumber"
+            android:layout_below="@id/patientAgeLabel"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/spacing_double"
+            android:layout_marginStart="@dimen/spacing_double"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_mobile_phone_label"/>
+
+        <TextView
+            android:id="@+id/patientMobilePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/patientMobilePhoneLabel"
+            android:layout_toEndOf="@id/patientMobilePhoneLabel"
+            android:layout_below="@id/patientAgeLabel"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginStart="@dimen/spacing"
+            tools:text="2634718142"/>
+
+        <TextView
+            android:id="@+id/patientAddressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patientPhoneLabel"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:textSize="@dimen/label_font_size"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/patient_address_label"/>
+
+        <TextView
+            android:id="@+id/patientAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patientAddressLabel"
+            android:layout_marginTop="@dimen/spacing"
+            tools:text="Calle Miguez 506 San Martin Mendoza Argentina"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

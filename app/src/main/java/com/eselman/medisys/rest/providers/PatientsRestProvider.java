@@ -12,7 +12,6 @@ import retrofit2.http.GET;
  */
 
 public interface PatientsRestProvider {
-
     @GET("person/patients")
     Call<List<Patient>> getPatientsList();
 }

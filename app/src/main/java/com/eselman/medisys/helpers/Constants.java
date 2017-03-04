@@ -7,4 +7,7 @@ public class Constants {
     // Intent Extras
     public final static String PATIENT_EXTRA = "patient_extra";
     public final static String PATIENT_BUNDLE = "patient_bundle";
+
+    // Params
+    public final static String DEFAULT_COUNTRY = "AR";
 }

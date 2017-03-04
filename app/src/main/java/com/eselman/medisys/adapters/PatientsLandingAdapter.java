@@ -17,11 +17,11 @@ import java.util.List;
 public class PatientsLandingAdapter extends RecyclerView.Adapter<PatientsLandingAdapter.ViewHolder> {
     private List<Patient> patients;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView patientNameTextView;
-        TextView patientIdNumberTextView;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView patientNameTextView;
+        private TextView patientIdNumberTextView;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             patientNameTextView = (TextView) itemView.findViewById(R.id.patientName);
             patientIdNumberTextView = (TextView) itemView.findViewById(R.id.patientIdNumber);

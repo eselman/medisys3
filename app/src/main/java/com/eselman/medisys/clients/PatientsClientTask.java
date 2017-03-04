@@ -12,7 +12,6 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 /**
  * Created by eselman on 04/02/2017.

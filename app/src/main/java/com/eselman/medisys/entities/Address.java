@@ -11,6 +11,9 @@ public class Address implements Serializable{
     private String number;
     private String floor;
     private String apartment;
+    private County county;
+    private Department department;
+    private Town town;
 
     public String getApartment() {
         return apartment;
@@ -50,6 +53,30 @@ public class Address implements Serializable{
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public County getCounty() {
+        return county;
+    }
+
+    public void setCounty(County county) {
+        this.county = county;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Town getTown() {
+        return town;
+    }
+
+    public void setTown(Town town) {
+        this.town = town;
     }
 }
 

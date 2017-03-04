@@ -6,9 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.eselman.medisys.adapters.PatientViewPagerAdapter;
 import com.eselman.medisys.entities.Patient;
@@ -16,7 +14,7 @@ import com.eselman.medisys.helpers.Constants;
 
 public class PatientDetailsActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private FloatingActionButton patientFloatingButton;
-
+    private PatientViewPagerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +45,7 @@ public class PatientDetailsActivity extends AppCompatActivity implements ViewPag
 
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager, Patient patient) {
-        PatientViewPagerAdapter adapter = new PatientViewPagerAdapter(getSupportFragmentManager());
+        adapter = new PatientViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PatientFormFragment(), getResources().getString(R.string.patient_form_label));
         adapter.addFragment(new PatientInsurancesFragment(), getResources().getString(R.string.patient_insurances_label));
         adapter.addFragment(new PatientHistoryFragment(), getResources().getString(R.string.patient_history_label));
@@ -57,10 +55,18 @@ public class PatientDetailsActivity extends AppCompatActivity implements ViewPag
 
     // Override OnPageChangeListener methods
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    public void onPageScrolled(final int position, float positionOffset, int positionOffsetPixels) {
         switch (position) {
             case 0:
                 patientFloatingButton.setVisibility(View.VISIBLE);
+                patientFloatingButton.setImageDrawable(getResources().getDrawable(R.drawable.edit));
+                patientFloatingButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        adapter.replaceFragment(position, new EditPatientFragment());
+                        patientFloatingButton.setVisibility(View.GONE);
+                    }
+                });
                 break;
             case 1:
                 patientFloatingButton.setVisibility(View.GONE);

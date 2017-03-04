@@ -12,7 +12,7 @@ import com.eselman.medisys.helpers.Constants;
 public class PatientFormFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = null;
+        View rootView;
         Patient patient = (Patient)getActivity().getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
 
         if(patient != null && patient.getId() != null){

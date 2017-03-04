@@ -2,9 +2,7 @@ package com.eselman.medisys.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-
-import com.eselman.medisys.entities.Patient;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +11,9 @@ import java.util.List;
  * Created by eselman on 06/02/2017.
  */
 
-public class PatientViewPagerAdapter extends FragmentPagerAdapter {
+public class PatientViewPagerAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
-    private Patient patient;
 
     public PatientViewPagerAdapter(FragmentManager manager) {
         super(manager);
@@ -37,12 +34,19 @@ public class PatientViewPagerAdapter extends FragmentPagerAdapter {
         mFragmentTitleList.add(title);
     }
 
+    public void replaceFragment(int position, Fragment fragment){
+        mFragmentList.remove(getItem(position));
+        mFragmentList.add(position, fragment);
+        notifyDataSetChanged();
+    }
+
     @Override
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
     }
 
-    public Patient getPatient(){
-        return patient;
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
     }
 }

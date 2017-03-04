@@ -17,13 +17,25 @@
     <string name="patient_insurances_label">Obra Social</string>
     <string name="patient_history_label">Historia Clinica</string>
 
-    <!-- Patient Form Label -->
-    <string name="patient_idtype_label">Tipo y Nro de Doc:</string>
-    <string name="patient_birth_date_label">Fecha de Nacimiento:</string>
-    <string name="patient_age_label">Edad:</string>
-    <string name="patient_phone_label">Telefono:</string>
-    <string name="patient_mobile_phone_label">Celular:</string>
-    <string name="patient_address_label">Domicilio:</string>
+    <!-- Patient Fields Label -->
+    <string name="patient_idtype_label">Tipo de Documento</string>
+    <string name="patient_birth_date_label">Fecha de Nacimiento</string>
+    <string name="patient_age_label">Edad</string>
+    <string name="patient_phone_label">Telefono</string>
+    <string name="patient_mobile_phone_label">Celular</string>
+    <string name="patient_address_label">Domicilio</string>
+    <string name="patient_first_name_label">Nombre</string>
+    <string name="patient_last_name_label">Apellido</string>
+    <string name="patient_id_number_label">Nro de Documento</string>
+    <string name="patient_birthday_label">Fecha de Nacimiento</string>
+    <string name="patient_phone_number_label">Telefono</string>
+    <string name="patient_mobile_phone_number_label">Celular</string>
+    <string name="patient_street_label">Calle</string>
+    <string name="patient_street_number_label">Nro</string>
+    <string name="patient_floor_label">Piso</string>
+    <string name="patient_apartment_label">Dpto</string>
+
+
 
 
     <string name="title_activity_main_landing">MainLandingActivity</string>

@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RetrofitHelper {
-    private static final String SERVER_BASE_URL = "http://192.168.1.35:8080/medisys/";
+    private static final String SERVER_BASE_URL = "http://192.168.1.33:8080/medisys/";
     private static final String AUTH_TOKEN = "MedisysToken";
 
     private OkHttpClient.Builder httpClient;

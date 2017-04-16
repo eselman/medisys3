@@ -20,7 +20,14 @@
         <activity
             android:name=".MainLandingActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".PatientDetailsActivity" android:parentActivityName=".MainLandingActivity"></activity>
+        <activity
+            android:name=".PatientDetailsActivity"
+            android:parentActivityName=".MainLandingActivity" />
+        <activity
+            android:name=".EditPatientActivity"
+            android:parentActivityName=".PatientDetailsActivity" />
+        <activity android:name=".AddPatientActivity"
+            android:parentActivityName=".MainLandingActivity"/>
     </application>
 
 </manifest>

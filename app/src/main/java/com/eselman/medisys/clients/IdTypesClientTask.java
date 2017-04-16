@@ -47,7 +47,6 @@ public class IdTypesClientTask extends AsyncTask {
 
     @Override
     protected void onPostExecute(Object idTypes) {
-        super.onPostExecute(idTypes);
         callback.getIdentificationTypesCallback(idTypes);
     }
 }

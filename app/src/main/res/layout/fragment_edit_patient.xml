@@ -243,75 +243,12 @@
                         android:maxLength="5"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/patientFloorLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_below="@id/patientStreetLinearLayout"
-                android:weightSum="1"
-                android:baselineAligned="false">
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/patientFloorTextInputLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?android:attr/actionBarSize"
-                    android:paddingStart="@dimen/spacing"
-                    android:paddingLeft="@dimen/spacing"
-                    android:paddingEnd="@dimen/spacing"
-                    android:paddingRight="@dimen/spacing"
-                    android:clipToPadding="false"
-                    android:transitionGroup="true"
-                    tools:ignore="UnusedAttribute,NewApi"
-                    android:textColorHint="@color/colorTextHint"
-                    android:layout_weight="0.5">
-                    <EditText
-                        android:id="@+id/patientFloorText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="@dimen/spacing"
-                        android:paddingLeft="@dimen/spacing"
-                        android:paddingEnd="@dimen/spacing"
-                        android:paddingRight="@dimen/spacing"
-                        android:textSize="@dimen/edit_text_font_size"
-                        android:fontFamily="sans-serif"
-                        android:hint="@string/patient_floor_label" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/patientApartmentTextInputLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?android:attr/actionBarSize"
-                    android:paddingStart="@dimen/spacing"
-                    android:paddingLeft="@dimen/spacing"
-                    android:paddingEnd="@dimen/spacing"
-                    android:clipToPadding="false"
-                    android:transitionGroup="true"
-                    tools:ignore="UnusedAttribute,NewApi"
-                    android:textColorHint="@color/colorTextHint"
-                    android:layout_weight="0.5">
-                    <EditText
-                        android:id="@+id/patientApartmentText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="@dimen/spacing"
-                        android:paddingLeft="@dimen/spacing"
-                        android:paddingEnd="@dimen/spacing"
-                        android:paddingRight="@dimen/spacing"
-                        android:textSize="@dimen/edit_text_font_size"
-                        android:fontFamily="sans-serif"
-                        android:hint="@string/patient_apartment_label"
-                        android:inputType="number"
-                        android:maxLength="5"/>
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
 
             <Spinner
                 android:id="@+id/patientProvinceSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/patientFloorLinearLayout">
+                android:layout_below="@id/patientStreetLinearLayout">
             </Spinner>
 
             <Spinner

@@ -13,12 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.eselman.medisys.adapters.PatientsLandingAdapter;
 import com.eselman.medisys.clients.PatientsClientTask;
+import com.eselman.medisys.entities.Address;
 import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.helpers.Constants;
 import com.eselman.medisys.helpers.DividerItemDecoration;
 import com.eselman.medisys.helpers.RecyclerTouchListener;
-
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class PatientsLandingFragment extends Fragment implements PatientsClientTask.Callback {
@@ -27,8 +26,6 @@ public class PatientsLandingFragment extends Fragment implements PatientsClientT
     private RecyclerView.LayoutManager layoutManager;
     private List<Patient> patients;
     private FloatingActionButton addPatientFloatingBtn;
-
-    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Nullable
     @Override
@@ -66,11 +63,14 @@ public class PatientsLandingFragment extends Fragment implements PatientsClientT
         addPatientFloatingBtn.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-            Intent patientDetailsIntent = new Intent(getActivity(), PatientDetailsActivity.class);
+            Intent addPatientIntent = new Intent(getActivity(), AddPatientActivity.class);
               Bundle patientBundle = new Bundle();
-              patientBundle.putSerializable(Constants.PATIENT_BUNDLE, new Patient());
-              patientDetailsIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
-            startActivity(patientDetailsIntent);
+              Address patientAddress = new Address();
+              Patient newPatient = new Patient();
+              newPatient.setAddress(patientAddress);
+              patientBundle.putSerializable(Constants.PATIENT_BUNDLE, newPatient);
+              addPatientIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
+            startActivity(addPatientIntent);
           }
         });
 

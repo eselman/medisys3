@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Medisys</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <!-- Login strings -->
     <string name="username_placeholder">Usuario</string>
     <string name="password_placeholder">Contraseña</string>
@@ -35,16 +38,6 @@
     <string name="patient_floor_label">Piso</string>
     <string name="patient_apartment_label">Dpto</string>
 
-
-
-
-    <string name="title_activity_main_landing">MainLandingActivity</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Patient Action Labels -->
+    <string name="edit_patient_save">Guardar Paciente</string>
 </resources>

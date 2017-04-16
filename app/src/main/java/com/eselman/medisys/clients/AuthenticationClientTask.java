@@ -48,7 +48,6 @@ public class AuthenticationClientTask extends AsyncTask {
 
     @Override
     protected void onPostExecute(Object o) {
-        super.onPostExecute(o);
         callback.authenticationCallback(o);
     }
 }

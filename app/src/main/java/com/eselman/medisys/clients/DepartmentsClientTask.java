@@ -50,7 +50,6 @@ public class DepartmentsClientTask extends AsyncTask {
 
     @Override
     protected void onPostExecute(Object departments) {
-        super.onPostExecute(departments);
         callback.getDepartmentsCallback(departments);
     }
 }

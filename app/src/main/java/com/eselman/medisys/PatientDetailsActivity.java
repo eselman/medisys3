@@ -1,5 +1,6 @@
 package com.eselman.medisys;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -13,8 +14,9 @@ import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.helpers.Constants;
 
 public class PatientDetailsActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
-    private FloatingActionButton patientFloatingButton;
+    public FloatingActionButton patientFloatingButton;
     private PatientViewPagerAdapter adapter;
+    private Patient patient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +25,11 @@ public class PatientDetailsActivity extends AppCompatActivity implements ViewPag
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Patient patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
+        patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
         setActionBarTitle(patient);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.patientsViewPager);
-        setupViewPager(viewPager, patient);
+        setupViewPager(viewPager);
         // Set Tabs inside Toolbar
         TabLayout tabs = (TabLayout) findViewById(R.id.patientsTabs);
         tabs.setupWithViewPager(viewPager);
@@ -44,11 +46,10 @@ public class PatientDetailsActivity extends AppCompatActivity implements ViewPag
     }
 
     // Add Fragments to Tabs
-    private void setupViewPager(ViewPager viewPager, Patient patient) {
+    private void setupViewPager(ViewPager viewPager) {
         adapter = new PatientViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PatientFormFragment(), getResources().getString(R.string.patient_form_label));
         adapter.addFragment(new PatientInsurancesFragment(), getResources().getString(R.string.patient_insurances_label));
-        adapter.addFragment(new PatientHistoryFragment(), getResources().getString(R.string.patient_history_label));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
     }
@@ -63,15 +64,17 @@ public class PatientDetailsActivity extends AppCompatActivity implements ViewPag
                 patientFloatingButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        adapter.replaceFragment(position, new EditPatientFragment());
+                        //adapter.replaceFragment(position, new EditPatientFragment());
                         patientFloatingButton.setVisibility(View.GONE);
+                        Intent editPatientIntent = new Intent(PatientDetailsActivity.this, EditPatientActivity.class);
+                        Bundle patientBundle = new Bundle();
+                        patientBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
+                        editPatientIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
+                        startActivity(editPatientIntent);
                     }
                 });
                 break;
             case 1:
-                patientFloatingButton.setVisibility(View.GONE);
-                break;
-            case 2:
                 patientFloatingButton.setVisibility(View.GONE);
                 break;
             default:

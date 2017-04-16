@@ -50,7 +50,6 @@ public class TownsClientTask extends AsyncTask {
 
     @Override
     protected void onPostExecute(Object towns) {
-        super.onPostExecute(towns);
         callback.getTownsCallback(towns);
     }
 }

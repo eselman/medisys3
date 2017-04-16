@@ -48,7 +48,6 @@ public class PatientsClientTask extends AsyncTask {
 
     @Override
     protected void onPostExecute(Object patients) {
-        super.onPostExecute(patients);
         callback.getPatientsListCallback(patients);
     }
 }

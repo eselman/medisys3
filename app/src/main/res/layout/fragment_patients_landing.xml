@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/add"
+        android:src="@drawable/add_person"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_anchor="@id/patientsRecyclerView"
         app:backgroundTint="@color/colorPrimary"/>

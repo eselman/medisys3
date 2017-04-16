@@ -3,7 +3,6 @@ package com.eselman.medisys.rest.providers;
 import com.eselman.medisys.entities.County;
 import com.eselman.medisys.entities.Department;
 import com.eselman.medisys.entities.IdentificationType;
-import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.entities.Town;
 
 import java.util.List;

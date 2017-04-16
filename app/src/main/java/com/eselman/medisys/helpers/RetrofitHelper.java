@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RetrofitHelper {
-    private static final String SERVER_BASE_URL = "http://192.168.1.33:8080/medisys/";
+    private static final String SERVER_BASE_URL = "http://192.168.1.35:8080/medisys/";
     private static final String AUTH_TOKEN = "MedisysToken";
 
     private OkHttpClient.Builder httpClient;
@@ -41,7 +41,7 @@ public class RetrofitHelper {
 
     public <S> S createProvider(Class<S> serviceClass, boolean requireAuth) {
         SessionHelper sessionHelper = SessionHelper.getInstance();
-        String authToken = AUTH_TOKEN + " " + sessionHelper.getSessionKey(context);
+        String authToken = requireAuth ? AUTH_TOKEN + " " + sessionHelper.getSessionKey(context): null;
         return createProvider(serviceClass, authToken);
     }
 
@@ -52,11 +52,12 @@ public class RetrofitHelper {
 
             if (!httpClient.interceptors().contains(interceptor)) {
                 httpClient.addInterceptor(interceptor);
-
-                builder.client(httpClient.build());
-                retrofit = builder.build();
             }
         }
+
+
+        builder.client(httpClient.build());
+        retrofit = builder.build();
 
         return retrofit.create(serviceClass);
     }
